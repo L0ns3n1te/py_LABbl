@@ -26,7 +26,7 @@ class Book:
 
 
 class Library:
-    def __init__(self, books=[]):
+    def __init__(self, books=None):
         self.books = books
 
     def get_next_book_id(self):
@@ -35,9 +35,9 @@ class Library:
         else:
             return self.books[-1].id + 1
 
-    def get_index_by_book_id(self, id):
+    def get_index_by_book_id(self, id_):
         for i in self.books:
-            if i.id == id:
+            if i.id == id_:
                 return self.books.index(i)
         else:
             raise ValueError("Книги с запрашиваемым id не существует")
